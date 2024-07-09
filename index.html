@@ -13,33 +13,40 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
- 
+    background-image: url('https://t4.ftcdn.net/jpg/05/74/01/81/360_F_574018104_k2V59gKiqWUmAYd1d7sSVzanIpWu2f3v.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden
+    
 }
 #grid-container {
+    
     display: grid;
 
     grid-template-columns: repeat(9, 1fr);
-    /* grid-template-rows: repeat(8, 1fr); */
+    grid-template-rows: repeat(8, 1fr);
       width : 50%;
-
+   
 
   }
 
 
   .grid-item {
-  border: 1px solid #000000 ;
- background-color: white;
-  height: 50% 
+
+     border: 1px solid #127d8d ;
+     color : transparent;
+     height: 50% ;
   
- 
 }
 
 
 .grid-row {
     
-justify-content: center;
-align-content: center;
-color: blue;
+    justify-content: center;
+    align-content: center;
+    color: transparent;
+
 }
 
 
@@ -50,13 +57,13 @@ color: blue;
 
 <body>
     
-    <button id="add">add</button>
+    
     <div id="grid-container"></div>
 
 
 
 
-
+    
 
 
 
