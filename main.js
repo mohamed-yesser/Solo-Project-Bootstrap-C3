@@ -40,7 +40,10 @@ var shapes = [
     [[0, 2], [0, 3], [0, 4], [0, 5], [0, 6]],      // long shape
     [[0, 3], [0, 4], [1, 4], [0, 5]],              // triangle shape
     [[0, 4], [1, 4], [0, 5], [1, 5]],              // square shape
-    [[0, 5], [1, 5], [1, 6], [2, 6]]               // zigzag shape
+    [[0, 5], [1, 5], [1, 6], [2, 6]],               // zigzag shape
+    [[0,5],[1,5],[2,5]]                           // bar shape
+
+    
     
 ];
 
@@ -48,14 +51,14 @@ function createObject() {
     var randomShape = Math.floor(Math.random() * shapes.length);
     currentState = shapes[randomShape].map(function(coords) {
         return [coords[0], coords[1]]
-    });
+    })
 }
 
 var moveLeft = false
 var moveRight = false
 
 function dropObject() {
-
+console.log(currentState)
     var collusion = false
 
     currentState.forEach(function(coords) {
@@ -74,8 +77,9 @@ function dropObject() {
         clearInterval(interval)
         nextObject()
         clearRows()
-
+        updateGrid() 
     } else {
+        
         var previousState = currentState.map(function(coords) {
             return [coords[0], coords[1]]
         });
@@ -156,11 +160,11 @@ function updateGrid() {
     }
 });
 
-var interval = setInterval(dropObject, 1000)
+var interval = setInterval(dropObject, 750)
 
 function nextObject() {
     createObject();
-    interval = setInterval(dropObject, 1000)
+    interval = setInterval(dropObject, 750)
 }
 
 initializeGrid()
